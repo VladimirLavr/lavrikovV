@@ -235,7 +235,8 @@ const users = [
 let searchObj = { id: 4 };
 
 const searchFunc = (searchObj) => {
-return users.find(user => {
+
+  return users.find(user => {
      
     if (searchObj.website === user.website) {
       return user;
