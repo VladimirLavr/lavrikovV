@@ -235,8 +235,7 @@ const users = [
 let searchObj = { id: 4 };
 
 const searchFunc = (searchObj) => {
-
-   let result = users.find(user => {
+return users.find(user => {
      
     if (searchObj.website === user.website) {
       return user;
@@ -246,9 +245,8 @@ const searchFunc = (searchObj) => {
 
     } else if (searchObj.email === user.email) {
       return user;
-    }
+    }  
   })
-   return result;
 }
 
 console.log(searchFunc(searchObj));
