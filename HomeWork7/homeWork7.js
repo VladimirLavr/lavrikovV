@@ -235,18 +235,21 @@ const users = [
 let searchObj = { id: 2 };
 
 const searchFunc = (searchObj) => {
-  users.filter(user => {
-
+  
+  users.find(user => {
+     
     if (searchObj.website === user.website) {
-      return (console.log(user))
+      return user && console.log(user)
 
     } else if (searchObj.id === user.id) {
-      return (console.log(user))
+      return user  && console.log(user)
 
     } else if (searchObj.email === user.email) {
-      return (console.log(user))
+      return user  && console.log(user)
     }
   })
-}
+  }
 
 (searchFunc(searchObj));
+
+
