@@ -248,8 +248,8 @@ const searchFunc = (searchObj) => {
       return user  && console.log(user)
     }
   })
-  }
+ }
 
-(searchFunc(searchObj));
+searchFunc(searchObj));
 
 
