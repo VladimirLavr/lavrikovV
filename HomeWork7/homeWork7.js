@@ -232,26 +232,21 @@ const users = [
 ];
 
 
-
-
-
-
-
 let searchObj = { id: 2 };
 
 const searchFunc = (searchObj) => {
-  users.find(user => {
+  users.filter(user => {
 
     if (searchObj.website === user.website) {
-      console.log(user);
+      return (console.log(user))
 
     } else if (searchObj.id === user.id) {
-      console.log(user);
+      return (console.log(user))
 
     } else if (searchObj.email === user.email) {
-      console.log(user);
+      return (console.log(user))
     }
   })
 }
 
-searchFunc(searchObj);
+(searchFunc(searchObj));
