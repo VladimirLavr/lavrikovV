@@ -232,11 +232,11 @@ const users = [
 ];
 
 
-let searchObj = { id: 2 };
+let searchObj = { id: 4 };
 
 const searchFunc = (searchObj) => {
-  
- let result = users.find(user => {
+
+   let result = users.find(user => {
      
     if (searchObj.website === user.website) {
       return user;
@@ -248,9 +248,9 @@ const searchFunc = (searchObj) => {
       return user;
     }
   })
-  console.log(result)
+   return result;
 }
 
-searchFunc(searchObj);
+console.log(searchFunc(searchObj));
 
 
