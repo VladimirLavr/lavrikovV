@@ -1,12 +1,12 @@
 const doc = document.getElementById('first');
 
-let arr=[]
+let arr=[];
 
 alert("Введите цвет телефона в поле, а также выберите с доступных");
 
 const phone = () => {
 
-    let cart = {}
+    let cart = {};
 
     if (document.querySelector('.inp').value === doc.options[doc.selectedIndex].text) {
         const model = prompt('Какой модель телефона вас интересует?', '')
@@ -20,11 +20,11 @@ const phone = () => {
         cart.hddSize = hddSize;
         cart.osVersion = osVersion;
         cart.screen = screen;
-        return cart && arr.push(cart) && console.log(arr)
+        return cart && arr.push(cart) && console.log(arr);
 
     } else {
         alert('Вы ничего не выбрали');
     }
 
-}
+};
 
