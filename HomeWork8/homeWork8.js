@@ -5,7 +5,8 @@ let arr=[];
 alert("Введите цвет телефона в поле, а также выберите с доступных");
 
 const phone = () => {
-let option=doc.options[doc.selectedIndex].text;
+    
+let option = doc.options[doc.selectedIndex].text;
 
     let cart = {};
 
