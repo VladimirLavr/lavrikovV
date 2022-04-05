@@ -4,7 +4,7 @@ function chunk(arr, chunkSize) {
 
     let newArr = [];
 
-    if (chunkSize >= 1) {
+    if (chunkSize > 1) {
         for (let i = 0; i < arr.length; i += chunkSize) {
             newArr.push(arr.slice(i, i + chunkSize));
         }
@@ -17,7 +17,7 @@ function chunk(arr, chunkSize) {
 }
 
 
-const result = chunk(arr, 0);
+const result = chunk(arr, 1);
 console.log(result);
 
 
