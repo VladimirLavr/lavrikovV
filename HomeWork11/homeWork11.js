@@ -55,7 +55,7 @@ const school = {
     endLearningGroup(courseName) {
         if (this.inProgressGroups.some((inProgressGroup) => inProgressGroup.courseName === courseName)) {
 
-            if (this.inProgressGroups.some((inProgressGroup) => !(inProgressGroup.totalLessons === inProgressGroup.passedLessons))) {
+            if (this.inProgressGroups.some((inProgressGroup) => inProgressGroup.passedLessons > inProgressGroup.totalLessons)) {
                 console.log(`Извините, вы не можете закончить группу ${courseName} раньше времени! `);
 
             } else {
@@ -72,8 +72,7 @@ const school = {
     doneLesson(courseName) {
         if (this.inProgressGroups.some((item)=>item.courseName === courseName)){
         this.inProgressGroups.find((countPassedLessons) => {
-            let count = 1;
-            countPassedLessons.passedLessons = countPassedLessons.passedLessons + count;
+            countPassedLessons.passedLessons += 1
             console.log(`В группе ${courseName}, вы прошли еще одно занятие`);
         });
         
@@ -108,7 +107,7 @@ school.on(
 
 
 
-school.startLearningGroup("Front-end Pro", 5, 3, 7);
+school.startLearningGroup("Front-end Pro", 5, 7, 7);
 /* school.startLearningGroup("Front-end Basic", 16, 3, 5)
 school.startLearningGroup("Python advanced", 10, 3, 5); */
 
@@ -127,7 +126,7 @@ school.doneLesson('Front-end Pro');
 /* school.addCourse("C# Basic");
 
 school.removeCourse("Java Advanced"); */
-
+console.log(school)
 
 
 
