@@ -21,13 +21,14 @@ class ITSchool {
 
     startLearningGroup(courseName, teacherName, amountOfStudents) {
         if (this.availableCourses.includes(courseName)) {
-            if (amountOfStudents !== 0) {
-                amountOfStudents -= 1;
+            if (this.startedGroups.availableCourses !== 0) {
                 this.startedGroups.push(new LearningGroup(courseName, teacherName, amountOfStudents));
+                this.startedGroups.some((item) => item.availableTeachersAmount -= 1);
 
-            } else console.log(`Извините,нет достаточного количества учеников!`);
+            } else console.log(`Извините,нет достаточного количества преподавателей!`);
 
         } else console.log(`Извините,курса ${courseName} не существует!`);
+
     }
 
 
