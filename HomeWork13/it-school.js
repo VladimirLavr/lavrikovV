@@ -21,7 +21,7 @@ class ITSchool {
 
     startLearningGroup(courseName, teacherName, amountOfStudents) {
         if (this.availableCourses.includes(courseName)) {
-            if (this.startedGroups.availableCourses !== 0) {
+            if (this.startedGroups.availableTeachersAmount > 0) {
                 this.startedGroups.push(new LearningGroup(courseName, teacherName, amountOfStudents));
                 this.startedGroups.some((item) => item.availableTeachersAmount -= 1);
 
