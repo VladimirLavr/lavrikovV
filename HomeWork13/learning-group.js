@@ -14,6 +14,6 @@ class LearningGroup {
 
             } if (itSchool.name === title) console.log('Такая тема уже существует');
 
-        } if (itSchool.name === title) console.log('Такай урок уже существует');
+        } if (itSchool.description === topics) console.log('Такай урок уже существует');
     }
 }
