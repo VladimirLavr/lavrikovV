@@ -1,54 +1,40 @@
 class ITSchool {
+    availableCourses = [];
+    startedLearningGroups = [];
+
     constructor(name, description, maxGroupCount, maxStudentsCountPerGroup) {
         this.name = name;
         this.description = description;
         this.maxGroupCount = maxGroupCount;
         this.maxStudentsCountPerGroup = maxStudentsCountPerGroup;
-        this.availableCourses = ["Front-end Pro", "Front-end Basic", "Java Basic"];
-        this.startedGroups = [];
     }
 
 
     registerCourse(courseName, totalLessons, availableTeachersAmount) {
-        if (!(this.availableCourses.includes(courseName))) {
-            this.startedGroups.push(new Course(courseName, totalLessons, availableTeachersAmount));
-
-        } else {
-            console.log(`Извините,группа ${courseName} уже существует!`);
+        if (this.availableCourses.some((course) => course.name === courseName)) {
+            return `Course ${courseName} already exist.`;
         }
+        this.availableCourses.push(new Course(courseName, totalLessons, availableTeachersAmount));
     }
 
 
     startLearningGroup(courseName, teacherName, amountOfStudents) {
-        if (this.availableCourses.includes(courseName)) {
-            if (this.startedGroups.some((item)=>item.availableTeachersAmount > 0) {
-                this.startedGroups.push(new LearningGroup(courseName, teacherName, amountOfStudents));
-                this.startedGroups.some((item) => item.availableTeachersAmount -= 1);
+        const courseForNewLearningGroup = this.availableCourses.find((course) => (course.name === courseName) && course.availableTeachersAmount);
 
-            } else console.log(`Извините,нет достаточного количества преподавателей!`);
-
-        } else console.log(`Извините,курса ${courseName} не существует!`);
-
+        if (courseForNewLearningGroup) {
+            this.startedLearningGroups.push(new LearningGroup(courseName, teacherName, amountOfStudents));
+            courseForNewLearningGroup.availableTeachersAmount -= 1;
+        }
     }
 
 
     endLearningGroup(courseName, teacherName) {
-        if (this.startedGroups.some((item) => item.teacherName === teacherName)) {
-            if (this.startedGroups.some((course) => course.courseName === courseName)) {
-                this.startedGroups = this.startedGroups.filter((teacher) => teacher.teacherName !== teacherName);
-
-            } else console.log(`Извините, курса ${courseName} не существует`);
-
-        } else console.log(`Извините, преподавателя ${teacherName} не существует`);
+        this.startedLearningGroups = this.startedGroups.filter((group) => (group.courseName !== courseName) && (group.teacherName !== teacherName));
     }
 
 
     getLearningGroups(courseName) {
-        if (this.startedGroups.some((item) => item.courseName === courseName)) {
-            this.startedGroups = this.startedGroups.filter((item) => item.courseName === courseName);
-            return this.startedGroups;
-
-        } else console.log(`Извините, ничего по вашему запросу не найдено!`);
+        return this.startedLearningGroups.filter((group) => group.courseName === courseName);
     }
 }
 
