@@ -26,9 +26,7 @@ document.querySelector('.btn-ac').addEventListener('click', () => {
 
 
 document.querySelector('.btn-me').addEventListener('click', () => {
-    if (firstNum === '') {
-        display.textContent = Mem;
-    } else if (firstNum !== '') {
+   if (firstNum !== '') {
         Mem = firstNum;
     }
     firstNum = Mem;
