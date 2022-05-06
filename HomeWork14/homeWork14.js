@@ -1,8 +1,8 @@
-let a = '';
-let b = '';
+let firstNum = '';
+let secondNum = '';
 let operation = '';
 let result = false;
-let arr = [];
+let Mem = '';
 
 const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
 const action = ['-', '+', '*', '/', '%', '√',];
@@ -12,8 +12,8 @@ const display = document.querySelector('.calc-input');
 console.log(display);
 
 function clear() {
-    a = '';
-    b = '';
+    firstNum = '';
+    secondNum = '';
     operation = '';
     result = '';
     display.textContent = 0;
@@ -21,18 +21,18 @@ function clear() {
 
 
 document.querySelector('.btn-ac').addEventListener('click', () => {
-
-    clear()
+    clear();
 });
 
 
 document.querySelector('.btn-me').addEventListener('click', () => {
-    if (arr == '') {
-        arr.push(a);
-        console.log(arr)
+    if (firstNum === '') {
+        display.textContent = Mem;
+    } else if (firstNum !== '') {
+        Mem = firstNum;
     }
-    a = arr;
-    display.textContent = a;
+    firstNum = Mem;
+    display.textContent = firstNum;
 })
 
 
@@ -41,20 +41,20 @@ document.querySelector('.allButtons').addEventListener('click', (event) => {
     const key = event.target.textContent;
 
     if (digits.includes(key)) {
-        if (b === '' && operation === '') {
-            a += key;
-            display.textContent = a;
+        if (secondNum === '' && operation === '') {
+            firstNum += key;
+            display.textContent = firstNum;
         }
 
-        else if (a !== '' && b !== '' && result) {
-            b = key;
+        else if (firstNum !== '' && secondNum !== '' && result) {
+            secondNum = key;
             result = false;
-            display.textContent = b;
+            display.textContent = secondNum;
         }
 
         else {
-            b += key;
-            display.textContent = b;
+            secondNum += key;
+            display.textContent = secondNum;
         }
 
         return;
@@ -71,27 +71,27 @@ document.querySelector('.allButtons').addEventListener('click', (event) => {
     if (key === '=') {
         switch (operation) {
             case '+':
-                a = (+a) + (+b);
+                firstNum = (+firstNum) + (+secondNum);
                 break;
             case '-':
-                a = a - b;
+                firstNum = firstNum - secondNum;
                 break;
             case '*':
-                a = a * b;
+                firstNum = firstNum * secondNum;
                 break;
             case '/':
-                a = a / b;
+                firstNum = firstNum / secondNum;
                 break;
             case '%':
-                a = a / 100 * b;
+                firstNum = firstNum / 100 * secondNum;
                 break;
             case '√':
-                a = Math.sqrt(b);
+                firstNum = Math.sqrt(secondNum);
                 break;
         }
 
         result = true;
-        display.textContent = a;
+        display.textContent = firstNum;
     }
 });
 
