@@ -2,13 +2,12 @@
 function unique(array) {
     const res = [];
 
-    array.filter((value) => {
-        if (!res.includes(value)) {
-            res.push(value);
+    return array.filter((item) => {
+        if (!res.includes(item)) {
+            res.push(item);
+            return res;
         }
     });
-    return res;
-
 }
 
 console.log(unique([1, 1, 2, 2, 4, 2, 7, 1, 8, 8, 10, 20]))
