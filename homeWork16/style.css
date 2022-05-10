@@ -1,0 +1,86 @@
+* {
+    font-family: Lato, sans-serif;
+}
+
+.container {
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(235, 229, 229);
+    max-width: 600px;
+    height: 600px;
+    border-radius: 10px;
+    border: 0.1px solid rgb(235, 229, 229);
+    border: none;
+}
+
+.addToDo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: rgb(164, 164, 164, 0.5);
+    border: 2px solid rgb(164, 164, 164);
+    height: 60px;
+    border: none;
+
+}
+
+.addToDo__inp {
+    height: 60%;
+    width: 60%;
+    border-radius: 10px;
+    outline: none;
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    margin-left: 30px;
+    background-color: rgb(235, 229, 229, 1);
+    padding: 0px 6px 0 36px;
+}
+
+.addToDo__btn {
+    width: 100px;
+    height: 35px;
+    border: 2px solid rgb(164, 164, 164);
+    margin-right: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 229, 229, 1);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 20px 0 20px;
+    border-bottom: 2px solid black;
+    padding: 0 10px 20px 10px;
+}
+
+.item__descr {
+    font-weight: 700;
+}
+
+.item__checkbox {
+    
+  width: 20px;
+    height: 20px;
+    background: rgb(164, 164, 164, 0.5);
+    cursor: pointer;
+}
+
+.checkbox__checked {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 9px;
+    width: 20px;
+    height: 20px;
+    background: url("../homeWork16/Checkmark_icon-icons.com_71846.png") center no-repeat;
+    cursor: pointer;
+}
