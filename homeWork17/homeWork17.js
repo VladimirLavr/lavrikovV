@@ -17,19 +17,18 @@ console.log(unique([1, 1, 2, 2, 4, 2, 7, 1, 8, 8, 10, 20]))
 
 //Вторая задача
 
-const numeric =new Number(2);
-let nums =[]; 
-Number.prototype.plus = function(num) {
-    let result = numeric+num;
-      nums.push(result);
-       return  result;
-  }
-  
-  Number.prototype.minus =function(num2){
-       
-      return  nums[0] - num2;
-  }
-console.log((2).plus(3).minus(1));
+new Number(2);
+
+Number.prototype.plus = function (num) {
+
+    return this + num;
+}
+
+Number.prototype.minus = function (num2) {
+
+    return this - num2;
+}
+console.log((2).plus(5).minus(1));
 
 
 
