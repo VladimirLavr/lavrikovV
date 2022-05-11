@@ -1,4 +1,19 @@
-let todos = [];
+class Todolist{
+    constructor() {
+        this.todos = [];
+    }
+    add(todo){
+        this.todos.push(new TodoITtem(todo));
+          }
+}
+
+class TodoITtem{
+    constructor(todo){
+        this.todo=todo;
+    }
+}
+
+let todoList = new Todolist();
 
 let inp = document.querySelector('.addToDo__inp');
 
@@ -9,14 +24,16 @@ function todolist() {
     let checkBox = document.createElement('div');
     let unChecked = document.createElement('div');
 
-    if (inp.value) {
+    let todo = inp.value;
+    
+    if (todo) {
 
         newDiv.classList.add('item');
         document.querySelector('.addToDo').after(newDiv);
 
         newDescr.classList.add('item__descr');
         newDiv.append(newDescr);
-        newDescr.innerText = inp.value;
+        newDescr.innerText = todo;
 
         checkBox.classList.add('item__checkbox');
         newDiv.append(checkBox);
@@ -24,10 +41,12 @@ function todolist() {
         unChecked.classList.add('checkbox__checked');
         newDiv.append(unChecked);
 
-        inp.value = '';
+        
 
-        newDescr.innerText ? todos.push(newDescr.innerText) : null;
-        console.log(todos);
+        newDescr.innerText ? todoList.add(todo) : null;
+        console.log(todoList.todos);
+
+        inp.value = '';
 
     }
 
