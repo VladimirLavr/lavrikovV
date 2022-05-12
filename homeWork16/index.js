@@ -1,15 +1,15 @@
-class Todolist{
+class Todolist {
     constructor() {
         this.todos = [];
     }
-    add(todo){
+    add(todo) {
         this.todos.push(new TodoITtem(todo));
-          }
+    }
 }
 
-class TodoITtem{
-    constructor(todo){
-        this.todo=todo;
+class TodoITtem {
+    constructor(todo) {
+        this.todo = todo;
     }
 }
 
@@ -22,10 +22,10 @@ function todolist() {
     let newDiv = document.createElement('div');
     let newDescr = document.createElement('div');
     let checkBox = document.createElement('div');
-    let unChecked = document.createElement('div');
-
+    let inpRadioBox = document.createElement('input:radio');
+    let inpChecked = document.createElement('label')
     let todo = inp.value;
-    
+
     if (todo) {
 
         newDiv.classList.add('item');
@@ -35,13 +35,16 @@ function todolist() {
         newDiv.append(newDescr);
         newDescr.innerText = todo;
 
-        checkBox.classList.add('item__checkbox');
+        checkBox.classList.add('checkbox__block');
         newDiv.append(checkBox);
 
-        unChecked.classList.add('checkbox__checked');
-        newDiv.append(unChecked);
+        inpRadioBox.classList.add('box_radio');
+        checkBox.append(inpRadioBox);
 
-        
+
+        inpChecked.classList.add('checked_box');
+        checkBox.append(inpChecked);
+
 
         newDescr.innerText ? todoList.add(todo) : null;
         console.log(todoList.todos);
@@ -52,15 +55,17 @@ function todolist() {
 
 
     newDiv.addEventListener('click', (event) => {
-        if (event.target.matches('.item__checkbox')) {
+        if (event.target.matches('.checkbox__block')) {
             newDescr.style.textDecoration = 'line-through';
-            unChecked.style.display = 'block';
+            inpChecked.style.display = 'block';
 
 
-        } else if (event.target.matches('.checkbox__checked')) {
-            newDiv.append(unChecked);
-            unChecked.style.display = 'none';
+
+        } else if (event.target.matches('.checked_box')) {
+            checkBox.append(inpChecked);
+            inpChecked.style.display = 'none';
             newDescr.style.textDecoration = 'none';
+
         }
     })
 }
