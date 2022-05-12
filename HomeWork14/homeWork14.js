@@ -27,7 +27,6 @@ document.querySelector('.btn-me').addEventListener('click', () => {
     }
     firstNum = Mem;
     display.textContent = firstNum;
-    console.log(firstNum)
 })
 
 
