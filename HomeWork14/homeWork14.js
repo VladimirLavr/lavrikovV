@@ -18,7 +18,7 @@ function clear() {
 
 document.querySelector('.btn-ac').addEventListener('click', () => {
     clear();
-});
+})
 
 
 document.querySelector('.btn-me').addEventListener('click', () => {
