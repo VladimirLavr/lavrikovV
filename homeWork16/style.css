@@ -66,21 +66,30 @@
     font-weight: 700;
 }
 
-.item__checkbox {
-    
-  width: 20px;
-    height: 20px;
-    background: rgb(164, 164, 164, 0.5);
-    cursor: pointer;
-}
 
-.checkbox__checked {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 9px;
+.checkbox__block {
+    position: relative;
+    display: flex;
+    justify-content: center;
     width: 20px;
     height: 20px;
-    background: url("../homeWork16/Checkmark_icon-icons.com_71846.png") center no-repeat;
-    cursor: pointer;
+    border: 2px solid black;
+}
+
+.box_radio {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+
+.checked_box {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url("./Checkmark_icon-icons.com_71846.png") center no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
 }
