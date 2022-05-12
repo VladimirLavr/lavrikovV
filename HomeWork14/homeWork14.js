@@ -33,18 +33,18 @@ document.querySelector('.btn-me').addEventListener('click', () => {
 
 function nums() {
     if (secondNum === '' && operation === '') {
-        firstNum += event.target.textContent;;
+        firstNum += event.target.textContent;
         display.textContent = firstNum;
     }
 
     else if (firstNum !== '' && secondNum !== '' && res) {
-        secondNum = event.target.textContent;;
+        secondNum = event.target.textContent;
         res = false;
         display.textContent = secondNum;
     }
 
     else {
-        secondNum += event.target.textContent;;
+        secondNum += event.target.textContent;
         display.textContent = secondNum;
     }
 
@@ -53,7 +53,7 @@ function nums() {
 
 
 function operations() {
-    operation = event.target.textContent;;
+    operation = event.target.textContent;
     display.textContent = operation;
     return;
 }
