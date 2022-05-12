@@ -76,7 +76,7 @@ document.querySelector('.addToDo__btn').addEventListener('click', () => {
 })
 
 document.querySelector('.addToDo__inp').addEventListener('keydown', (event) => {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
 
         todolist();
     }
