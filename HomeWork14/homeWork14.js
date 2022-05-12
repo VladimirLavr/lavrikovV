@@ -18,7 +18,7 @@ function clear() {
 
 document.querySelector('.btn-ac').addEventListener('click', () => {
     clear();
-})
+});
 
 
 document.querySelector('.btn-me').addEventListener('click', () => {
@@ -27,6 +27,7 @@ document.querySelector('.btn-me').addEventListener('click', () => {
     }
     firstNum = Mem;
     display.textContent = firstNum;
+    console.log(firstNum)
 })
 
 
@@ -59,31 +60,29 @@ function operations() {
 
 
 function result() {
-    if (event.target.textContent === '=') {
-        switch (operation) {
-            case '+':
-                firstNum = (+firstNum) + (+secondNum);
-                break;
-            case '-':
-                firstNum = firstNum - secondNum;
-                break;
-            case '*':
-                firstNum = firstNum * secondNum;
-                break;
-            case '/':
-                firstNum = firstNum / secondNum;
-                break;
-            case '%':
-                firstNum = firstNum / 100 * secondNum;
-                break;
-            case '√':
-                firstNum = Math.sqrt(secondNum);
-                break;
-        }
 
-        res = true;
-        display.textContent = firstNum;
+    switch (operation) {
+        case '+':
+            firstNum = (+firstNum) + (+secondNum);
+            break;
+        case '-':
+            firstNum = firstNum - secondNum;
+            break;
+        case '*':
+            firstNum = firstNum * secondNum;
+            break;
+        case '/':
+            firstNum = firstNum / secondNum;
+            break;
+        case '%':
+            firstNum = firstNum / 100 * secondNum;
+            break;
+        case '√':
+            firstNum = Math.sqrt(secondNum);
+            break;
     }
+    res = true;
+    display.textContent = firstNum;
 }
 
 
@@ -93,6 +92,9 @@ function check() {
 
     } else if (event.target.matches('.operation')) {
         operations();
+        
+    } else if (event.target.matches('.btn-res')) {
+        result();
     }
 };
 
@@ -100,7 +102,7 @@ function check() {
 document.querySelector('.allButtons').addEventListener('click', (event) => {
 
     check();
-    result();
+
 });
 
 
