@@ -22,7 +22,7 @@ function todolist() {
     let newDiv = document.createElement('div');
     let newDescr = document.createElement('div');
     let checkBox = document.createElement('div');
-    let inpRadioBox = document.createElement('input:radio');
+    let inpCheckBox = document.createElement('input:checkbox');
     let inpChecked = document.createElement('label')
     let todo = inp.value;
 
@@ -38,8 +38,8 @@ function todolist() {
         checkBox.classList.add('checkbox__block');
         newDiv.append(checkBox);
 
-        inpRadioBox.classList.add('box_radio');
-        checkBox.append(inpRadioBox);
+        inpCheckBox.classList.add('box_checkbox');
+        inpChecked.append(inpCheckBox);
 
 
         inpChecked.classList.add('checked_box');
@@ -58,6 +58,7 @@ function todolist() {
         if (event.target.matches('.checkbox__block')) {
             newDescr.style.textDecoration = 'line-through';
             inpChecked.style.display = 'block';
+           
 
 
 
@@ -76,7 +77,7 @@ document.querySelector('.addToDo__btn').addEventListener('click', () => {
 })
 
 document.querySelector('.addToDo__inp').addEventListener('keydown', (event) => {
-    if (event.keyCode === 13) {
+    if (event.keyCode == 13) {
 
         todolist();
     }
