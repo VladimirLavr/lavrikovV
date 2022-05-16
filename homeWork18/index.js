@@ -1,20 +1,20 @@
-let count = 1;
+
 let result = document.querySelector('.result');
 
 
 function min() {
 
-    result.textContent = --count;
+    result.textContent = result.textContent - 1;
 }
 
 function plus() {
 
-    result.textContent = ++count;
+    result.textContent = +result.textContent + 1;
 }
 function res() {
 
     result.textContent = 0;
-    count = 0;
+
 }
 
 function resColor() {
