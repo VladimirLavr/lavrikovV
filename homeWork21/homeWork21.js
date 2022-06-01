@@ -4,8 +4,12 @@ getResult.open("GET", "https://jsonplaceholder.typicode.com/posts");
 
 
 getResult.onload = () => {
-    console.log(getResult.response);
+    if (getResult.status === 200) {
+        console.log(JSON.parse(getResult.response));
+
+    } else alert(`Запрос не удался код ошибки ${getResult.status}`)
 }
+
 getResult.send();
 
 //Post
@@ -20,11 +24,14 @@ let json = {
 postResult.setRequestHeader('Content-type', 'application/json;charset=UTF-8')
 postResult.onload = () => {
     if (postResult.status === 201) {
-        console.log(postResult.response);
+        console.log(JSON.parse(postResult.response));
 
-    } else console.error('Что-то пошло не так');
+    } else alert(`Запрос не удался код ошибки ${postResult.status}`)
 
 }
 postResult.send(JSON.stringify(json));
+
+
+
 
 
