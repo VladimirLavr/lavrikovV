@@ -2,30 +2,37 @@ class BuyList {
     constructor(titleList, author) {
         this.titleList = titleList,
             this.author = author,
-            this.maxElements = 12,
+            this.maxElements = 5,
             this.list = []
     }
 
 
     addItem(id, title, total, unit) {
 
+        if (Object.values({id, title, total, unit}).some(item=>item === undefined)) {
+
+            throw new Error(` Не добавлено. Добавляете пустой обьект`);
+
+        }
+
+        if (total === '') {
+
+            throw new Error(`${title}: ${unit}. - Не добавлено. Отсутсвует количество товара!`);
+        }
+
         if (this.list.length >= this.maxElements) {
 
             throw new Error(`Нельзя добавить больше ${this.maxElements} товаров`);
 
         }
-        if (new List(id, title, total, unit).total === '') {
 
-            throw new Error(`${title}: ${unit}. - Не добавлено. Отсутсвует количество товара!`);
+
+        if (!this.list.some(item => item.id === id)) {
+            
+            this.list.push(new List(id, title, total, unit));
         }
 
-        if (Object.values(new List(id, title, total, unit))
-            .some(item => item === undefined)) {
 
-            throw new Error(` Не добавлено. Добавляете пустой обьект`);
-
-        } else  this.list.push(new List(id, title, total, unit));
-       
     }
 
 
@@ -35,7 +42,7 @@ class BuyList {
             let delItem = this.list.find(item => item.id === id);
 
             this.list = this.list.filter(item => item.id !== id);
-           
+
             throw new Error(` ${delItem.title}: ${delItem.total} ${delItem.unit}.- успешно удалено из списка`);
         }
     }
@@ -65,13 +72,15 @@ function result() {
     try {
         allBuyList.addItem(1, "Масло", "4", "литра");
         allBuyList.addItem(2, "Молоко", "6", "литра");
-        allBuyList.addItem(3, "Мука", "8", "шт");
-        allBuyList.addItem(4, "Соль", "9", "шт");
-    
+        allBuyList.addItem(3, "Сметана", "6", "литра");
+        //allBuyList.addItem(4, "Кефир", "", "литра");
+
+
+
         allBuyList.removeItem(1);
-        // 
-        //  allBuyList.addItem();
-        //  allBuyList.addItem(7, "Мука", "", "пач");
+    
+         //allBuyList.addItem();
+
 
     } catch (error) {
         console.log(error);
@@ -89,8 +98,8 @@ function result() {
         element.textContent = error.message;
 
     } finally {
-       
-        
+
+
         allBuyList.list.forEach(item => {
 
             let element = document.createElement('div');
@@ -108,6 +117,7 @@ function result() {
 
 
 result();
+
 
 
 
