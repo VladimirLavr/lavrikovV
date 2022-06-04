@@ -25,7 +25,7 @@ class BuyList {
             throw new Error(` Не добавлено. Добавляете пустой обьект`);
 
         } else  this.list.push(new List(id, title, total, unit));
-        return this.list
+       
     }
 
 
