@@ -1,0 +1,21 @@
+.wrapper {
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    height: 40px;
+    background-color: rgba(72, 173, 77, 0.593);
+    font-size: 20px;
+    text-align: center;
+    border: 6px solid rgb(71, 188, 63);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 12px 0;
+    line-height: 40px;
+}
