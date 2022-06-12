@@ -1,4 +1,7 @@
-class BuyList {
+const wrapper = document.querySelector('.wrapper');
+
+
+class ListItem {
     constructor(titleList, author) {
         this.titleList = titleList,
             this.author = author,
@@ -9,7 +12,7 @@ class BuyList {
 
     addItem(id, title, total, unit) {
 
-        if (Object.values({id, title, total, unit}).some(item=>item === undefined)) {
+        if (Object.values({ id, title, total, unit }).some(item => item === undefined)) {
 
             throw new Error(` Не добавлено. Добавляете пустой обьект`);
 
@@ -28,8 +31,8 @@ class BuyList {
 
 
         if (!this.list.some(item => item.id === id)) {
-            
-            this.list.push(new List(id, title, total, unit));
+
+            this.list.push(new Item(id, title, total, unit));
         }
 
 
@@ -38,19 +41,34 @@ class BuyList {
 
 
     removeItem(id) {
+
         if (this.list.find(item => item.id === id)) {
+
             let delItem = this.list.find(item => item.id === id);
+
+
+            const delBlock = document.createElement('div');
+
+            delBlock.classList.add('list');
+
+            delBlock.style.backgroundColor = '#48769d';
+
+            delBlock.style.borderColor = '#bc3f3f';
+
+            delBlock.textContent = `${delItem.title}: ${delItem.total} ${delItem.unit}. - успешно удалено. id обьекта ${id}`;
+            
+            wrapper.after(delBlock);
 
             this.list = this.list.filter(item => item.id !== id);
 
-            throw new Error(` ${delItem.title}: ${delItem.total} ${delItem.unit}.- успешно удалено из списка`);
-        }
+
+        } else throw new Error(`Не удалено!. Товар с id обьектом ${id} не найден в списке`);
     }
 }
 
 
 
-class List {
+class Item {
     constructor(id, title, total, unit) {
         this.id = id,
             this.title = title,
@@ -61,46 +79,45 @@ class List {
 
 
 
-let allBuyList = new BuyList();
+let listItem = new ListItem("Владимир", "Продукты");
 
 
 
 function result() {
 
-    const wrapper = document.querySelector('.wrapper');
+    let err = document.createElement('div');
 
     try {
-        allBuyList.addItem(1, "Масло", "4", "литра");
-        allBuyList.addItem(2, "Молоко", "6", "литра");
-        allBuyList.addItem(3, "Сметана", "6", "литра");
-        //allBuyList.addItem(4, "Кефир", "", "литра");
 
+        listItem.addItem(1, "Масло", "4", "шт");
+        listItem.addItem(2, "Молоко", "3", "литра");
+        listItem.addItem(3, "Сметана", "5", "пач");
+        listItem.addItem(5, "Кефир", "2", "литра");
 
+        listItem.removeItem(1);
 
-        allBuyList.removeItem(1);
-    
-         //allBuyList.addItem();
+        listItem.addItem(4, "Кефир", "", "литра");
+
+        // listItem.addItem();
 
 
     } catch (error) {
+
         console.log(error);
 
-        let element = document.createElement('div');
+        err.classList.add('list');
 
-        element.classList.add('list');
+        err.style.backgroundColor = '#c8803d';
 
-        wrapper.append(element);
+        err.style.borderColor = '#bc3f3f';
 
-        element.style.backgroundColor = '#c8803d';
+        err.textContent = error.message;
 
-        element.style.borderColor = '#bc3f3f';
-
-        element.textContent = error.message;
 
     } finally {
 
 
-        allBuyList.list.forEach(item => {
+        listItem.list.forEach(item => {
 
             let element = document.createElement('div');
 
@@ -109,17 +126,15 @@ function result() {
             wrapper.append(element);
 
             element.textContent = `${item.title}: ${item.total} ${item.unit}. - успешно добавлено. id обьекта ${item.id}`;
+
         })
 
-        console.log(allBuyList.list);
+        wrapper.append(err);
+
+        console.log(listItem.list);
     }
+
 }
 
-
 result();
-
-
-
-
-
 
