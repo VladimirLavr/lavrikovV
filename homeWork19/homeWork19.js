@@ -46,7 +46,6 @@ class ListItem {
 
             let delItem = this.list.find(item => item.id === id);
 
-
             const delBlock = document.createElement('div');
 
             delBlock.classList.add('list');
