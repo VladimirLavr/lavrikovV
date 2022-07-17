@@ -1,0 +1,14 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(236, 155, 155, 0.77);
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #851437;
+    width: 30%;
+    height: 600px;
+}
