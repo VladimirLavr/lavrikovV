@@ -1,24 +1,22 @@
-
+interface avialableCourseObj {
+    courseName: string,
+    totalLessons: number,
+    availableTeachersAmount: number,
+    teacherName: string,
+    name: string
+}
 
 class ITSchool {
-    availableCourses: any = [];
-    startedLearningGroups: any = [];
-    name: string;
-    description: string;
-    maxGroupCount: number;
-    maxStudentsCountPerGroup: number;
-    startedGroups: any;
+    availableCourses: avialableCourseObj[] = [];
+    startedLearningGroups: avialableCourseObj[] = [];
+    startedGroups: avialableCourseObj[] = [];
 
-    constructor(name: string, description: string, maxGroupCount: number, maxStudentsCountPerGroup: number) {
-        this.name = name;
-        this.description = description;
-        this.maxGroupCount = maxGroupCount;
-        this.maxStudentsCountPerGroup = maxStudentsCountPerGroup;
+    constructor(public name: string, public description: string, public maxGroupCount: number, public maxStudentsCountPerGroup: number) {
     }
 
 
     registerCourse(courseName: string, totalLessons: number, availableTeachersAmount: number) {
-        if (this.availableCourses.some((course:any) => course.name === courseName)) {
+        if (this.availableCourses.some((course) => course.name === courseName)) {
             return `Course ${courseName} already exist.`;
         }
         // @ts-ignore
@@ -27,7 +25,7 @@ class ITSchool {
 
 
     startLearningGroup(courseName: string, teacherName: string, amountOfStudents: number) {
-        const courseForNewLearningGroup = this.availableCourses.find((course:any) => (course.name === courseName) && course.availableTeachersAmount);
+        const courseForNewLearningGroup = this.availableCourses.find((course) => (course.name === courseName) && course.availableTeachersAmount);
 
         if (courseForNewLearningGroup) {
             // @ts-ignore
@@ -37,13 +35,13 @@ class ITSchool {
     }
 
 
-    endLearningGroup(courseName: any, teacherName: any) {
-        this.startedLearningGroups = this.startedGroups.filter((group:any) => (group.courseName !== courseName) && (group.teacherName !== teacherName));
+    endLearningGroup(courseName, teacherName) {
+        this.startedLearningGroups = this.startedGroups.filter((group) => (group.courseName !== courseName) && (group.teacherName !== teacherName));
     }
 
 
-    getLearningGroups(courseName: any) {
-        return this.startedLearningGroups.filter((group:any) => group.courseName === courseName);
+    getLearningGroups(courseName) {
+        return this.startedLearningGroups.filter((group) => group.courseName === courseName);
     }
 }
 

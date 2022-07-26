@@ -1,19 +1,17 @@
+interface passedLessonsObj{
+    title:string,
+    topics:string
+}
 
 class LearningGroup {
-    passedLessons:any = [];
-    courseName: string;
-    teacherName: string;
-    amountOfStudents: number;
+    passedLessons:passedLessonsObj[] = [];
 
-    constructor(courseName: string, teacherName: string, amountOfStudents: number) {
-        this.courseName =courseName;
-        this.teacherName = teacherName;
-        this.amountOfStudents = amountOfStudents;
+    constructor(public courseName: string, public teacherName: string, public amountOfStudents: number) {
     }
 
     doneLesson(title:string, topics:string) {
 
-        if (this.passedLessons.some((lessons:any) => lessons.title === title)) {
+        if (this.passedLessons.some((lessons) => lessons.title === title)) {
             return `Lessons with title ${title} already exists.`;
         }
 

@@ -1,9 +1,9 @@
 class LearningGroup {
     constructor(courseName, teacherName, amountOfStudents) {
-        this.passedLessons = [];
         this.courseName = courseName;
         this.teacherName = teacherName;
         this.amountOfStudents = amountOfStudents;
+        this.passedLessons = [];
     }
     doneLesson(title, topics) {
         if (this.passedLessons.some((lessons) => lessons.title === title)) {

@@ -1,11 +1,12 @@
 class ITSchool {
     constructor(name, description, maxGroupCount, maxStudentsCountPerGroup) {
-        this.availableCourses = [];
-        this.startedLearningGroups = [];
         this.name = name;
         this.description = description;
         this.maxGroupCount = maxGroupCount;
         this.maxStudentsCountPerGroup = maxStudentsCountPerGroup;
+        this.availableCourses = [];
+        this.startedLearningGroups = [];
+        this.startedGroups = [];
     }
     registerCourse(courseName, totalLessons, availableTeachersAmount) {
         if (this.availableCourses.some((course) => course.name === courseName)) {
