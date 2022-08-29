@@ -1,0 +1,23 @@
+.ListMasters{
+    width: 600px;
+    margin-left: -205px;
+    padding: 62px 0;
+    border-radius: 10px;
+}
+
+.newMasterWrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.button{
+    margin: 9px 0 0 10px;
+    height: 34px;
+    width: 65px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #aab7a6;
+}

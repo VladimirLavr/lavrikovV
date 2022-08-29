@@ -1,0 +1,12 @@
+.Masters{
+    height: 50px;
+    width: 150px;
+    margin-left: 290px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    line-height: 48px;
+    color: #fff;
+    background-color: #0c62d5;
+    border-radius: 10px;
+}

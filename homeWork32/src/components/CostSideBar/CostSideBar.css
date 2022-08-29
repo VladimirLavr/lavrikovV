@@ -1,0 +1,63 @@
+.CostSideBar{
+    display: flex;
+    width: 26.30814%;
+    max-width: 400px;
+    min-height: 600px;
+    min-width: 265px;
+    margin: 0 0 0 15px;
+    background: #fff;
+    box-shadow: 0 0 1px rgb(21 34 66 / 20%), 0 14px 32px rgb(21 34 66 / 12%);
+    border-radius: 12px;
+   flex-direction: column;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+    vertical-align: top;
+}
+
+.CostSideBarButton {
+
+    background: rgba(157, 212, 88, 1);
+    max-width: 50%;
+    min-height: 55px;
+    border-radius: 18px;
+    margin: 100px 0 30px 100px;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+}
+
+.CostSideBarButtonDisable {
+
+    background: rgba(239, 239, 239, 0.67);
+    max-width: 50%;
+    min-height: 55px;
+    border-radius: 18px;
+    margin: 100px 0 30px 100px;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+}
+
+
+.CostSideBarButton:hover {
+     background-color: rgb(88, 212, 138)
+
+ }
+.CostSideBarButton:active{
+     background: rgba(229, 88, 114, 0.77)
+
+ }
+
+.inputSideBar{
+    width: 70%;
+    height: 30px;
+    margin: 60px;
+    border-radius: 10px;
+    padding: 0 5px;
+}

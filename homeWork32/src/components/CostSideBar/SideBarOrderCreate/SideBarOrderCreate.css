@@ -1,0 +1,17 @@
+.sideBarOrderCreateWrapper{
+    min-width: 265px;
+}
+
+.SideBarOrderCreate{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    padding: 0 10px;
+
+}
+
+.SideBarCart{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,27 @@
+.ChoseMaster{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    background: rgb(151, 168, 236);
+    max-width: 100%;
+    min-height: 55px;
+    border-radius: 10px;
+    margin: 50px 10px 0 10px;
+    padding: 5px 20px;
+    color: #FFFFFF;
+    border: none;
+    font-size: 24px;
+    text-align: center;
+    line-height: 53px;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+}
+
+.delImg{
+    position: absolute;
+    top:6px;
+    right: 8px;
+}
+
+

@@ -1,0 +1,13 @@
+.ItemContent{
+    display: flex;
+    transition: 0.4s;
+    padding: 0 5px;
+    justify-content: space-between;
+    line-height: 45px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.ItemContent:hover{
+    background-color: #97a8ec;
+}

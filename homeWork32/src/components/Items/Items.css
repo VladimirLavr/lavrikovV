@@ -1,0 +1,30 @@
+.itemsList {
+    transition: 0.4s;
+    margin-bottom: 20px;
+    background-color: #93c1ee;
+    width: 145px;
+    height: 40px;
+    line-height: 36px;
+    cursor: pointer;
+    color: #021421;
+    text-align: center;
+    border-radius: 16px;
+
+}
+
+.itemsList:hover{
+    background-color: #93c1ee;
+    padding: 7px 0;
+}
+
+.itemsListChecked{
+    margin-bottom: 20px;
+    width: 145px;
+    height: 40px;
+    line-height: 36px;
+    cursor: pointer;
+    color: #021421;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #72cacb;
+}

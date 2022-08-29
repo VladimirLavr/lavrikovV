@@ -1,0 +1,23 @@
+.content {
+    justify-content: space-around;
+    width: 100%;
+    margin: 100px 0;
+    overflow: auto;
+    overflow-y: hidden;
+
+
+}
+
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 50px;
+}
+
+.list__wrapper{
+    display: flex;
+}
+
+
+
+

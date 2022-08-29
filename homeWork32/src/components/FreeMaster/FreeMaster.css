@@ -1,0 +1,24 @@
+.FreeMasterWrapper{
+    display: flex;
+}
+
+.FreeMaster {
+    transition: ease-in-out 0.4s;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.FreeMaster:hover{
+    background: rgb(239, 239, 239);
+}
+
+.FreeMasterLogo{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

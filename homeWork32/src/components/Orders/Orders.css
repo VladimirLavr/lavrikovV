@@ -1,0 +1,96 @@
+.Orders{
+    margin-left: 200px;
+    color: #ecf4fe;
+    cursor: pointer;
+}
+
+.orders{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    width: 600px;
+    flex-direction: column;
+}
+
+.ordersMasterWrapper{
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    background-color: #4265bd;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.ordersMaster:hover{
+    background-color: #93c1ee;
+}
+.ordersMaster{
+    padding-left: 190px;
+}
+
+.ordersList{
+    min-width: 600px;
+    min-height: 60px;
+    line-height: 40px;
+    align-content: space-between;
+    text-align: center;
+
+}
+
+.orderHeader{
+    position: sticky;
+    top:0;
+}
+
+.ordersListItems{
+    display: flex;
+    align-content: center;
+    padding: 0 10px;
+    font-size: 18px;
+    justify-content: space-between;
+
+}
+
+.searchMaster{
+    display: flex;
+    margin: 20px auto;
+    width: 600px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchPanel{
+    width: 70%;
+    height: 50%;
+    border-radius: 10px;
+    border: #152242 solid 1px;
+    padding: 0 10px;
+    background-color: #c5c5c5;
+    font-size: 12px;
+}
+
+.searchButton{
+    transition: ease-in-out 0.4s;
+    width: 20%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: #6c9e7d;
+    cursor: pointer;
+}
+.searchButton:hover{
+    background-color: #72cacb;
+}
+
+.contentWrapper{
+    width: 600px;
+    margin-top: 30px;
+}
+
+.hideContentWrapper{
+    display: none;
+}
